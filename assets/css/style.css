@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/*
+  regular - 400
+  medium - 500
+  semi-bold - 600
+  bold - 700
+*/
+
 html {
   margin: 0;
 }
@@ -5,14 +13,35 @@ html {
 body {
   overflow-x: hidden;
   width: 100%;
+  background: #080808;
+  font-family: 'Inter';
 }
 
 #heading {
   text-align: center;
+  color: #c0c0c0;
+}
+
+.input-wrapper {
+  position: absolute;
+  padding-left: 0px !important;
+  bottom: 5%;
 }
 
 #user-input-text {
-  height: 150px;
+  border-radius: 10px !important;
+  border: 1px solid #101010;
+  background: #101010;
+  color: #c0c0c0;
+  height: 60px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#user-input-text:focus {
+  transition: all .2s ease-in;
+  border: 1px solid #232323;
+  box-shadow: none !important;
 }
 
 #validation-text {
@@ -22,7 +51,26 @@ body {
 }
 
 #system-response {
-  height: 150px;
+  position: absolute !important;
+  transform: translate(-50%, -50%) !important;
+  left: 50%;
+  top: 45%;
+  width: 90%;
+  border: none !important;
+  background: none;
+  text-align: center;
+  color: #c0c0c0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 2.0 !important;
+  height: auto;
+  overflow-y: hidden !important;
+}
+
+#system-response:focus {
+  transition: all .2s ease-in;
+  border: 1px solid #232323;
+  box-shadow: none !important;
 }
 
 .devider {
@@ -30,6 +78,20 @@ body {
 }
 
 .btn {
-  height: 55px;
-  border-radius: 10px;
+  border: none !important;
+  background: #101010 !important;
+  height: 100%;
+  border-radius: 10px !important;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn:focus {
+  background: #1d1d1d !important;
+  box-shadow: none !important;
+}
+
+.btn:hover {
+  transition: all .2s ease-in;
+  background: #1d1d1d !important;
 }
