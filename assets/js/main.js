@@ -34,6 +34,8 @@ document.getElementById('send-button').addEventListener('click', async () => {
             console.log("Message - "+ data.message);
             console.log("DB Response - "+ data.db_response);
             systemResponse.value = data.message;
+
+            userInput.value = ""
         } catch (error) {
             console.error(error);
         }
