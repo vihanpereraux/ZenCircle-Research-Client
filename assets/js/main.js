@@ -18,7 +18,7 @@ document.getElementById('send-button').addEventListener('click', async () => {
         systemResponse.style.fontWeight = 400;
         systemResponse.value = "Generating ...";
 
-        const URL = 'http://localhost:5000/get-response?content=' + userInput.value;
+        const URL = 'http://localhost:5000/get-ai-assistant-response?content=' + userInput.value;
         console.log(URL)
         try {
             const response = await fetch(URL, {
@@ -31,8 +31,8 @@ document.getElementById('send-button').addEventListener('click', async () => {
                 })
             });
             const data = await response.json();
-            console.log("Message - "+ data.message);
-            console.log("DB Response - "+ data.db_response);
+            console.log("Message - " + data.message);
+            console.log("DB Response - " + data.db_response);
             systemResponse.value = data.message;
 
             userInput.value = ""
@@ -60,19 +60,23 @@ clearResponse.addEventListener('click', () => {
 
 // cleans the chat history on both temp. and perm. memeory(db)
 deleteCatMemory.addEventListener('click', async () => {
-    const URL = 'http://localhost:5000/clean-conversation-history';
-    const response = await fetch(URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
+    try {
+        const URL = 'http://localhost:5000/clean-conversation-history';
+        const response = await fetch(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json();
+        if (data.message == "history cleared") {
+            alert(data.message)
         }
-    });
-    const data = await response.json();
-    if (data.message == "history cleared") {
-        alert(data.message)
-    }
-    else {
-        alert(data.message)
+        else {
+            alert(data.message)
+        }
+    } catch (error) {
+        console.error(error);
     }
 })
 
