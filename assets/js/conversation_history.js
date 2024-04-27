@@ -18,7 +18,7 @@ showHistoryBtn.addEventListener('click', async () => {
         
 
         console.log(typeof response.response);
-        console.log(updatedResponse);
+        console.log(updatedResponse)
 
     } catch (error) {
         console.error(error);

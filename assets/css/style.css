@@ -50,6 +50,14 @@ body {
   margin-top: 10px;
 }
 
+#audio-player {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  box-shadow: none;
+}
+
 #system-response {
   position: absolute !important;
   transform: translate(-50%, -50%) !important;
