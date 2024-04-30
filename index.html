@@ -9,94 +9,249 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/home.css">
+  <link rel="stylesheet" href="./assets/css/scroll.css">
+
+  <!-- lenis scroll lib -->
+  <script src="https://unpkg.com/lenis@1.0.45-dev.0/dist/lenis.min.js"></script>
 </head>
 
 <body>
-  <canvas id="glcanvas" width="100vw" height="100vh" tabindex="1"></canvas>
+  <!-- navbar -->
+  <nav wrapper class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <a class="navbar-brand" href="#">ZenCircle</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#">ZenCircle</a>
+          <a class="nav-link" href="#">Case Studies</a>
+          <a class="nav-link" href="#">Contact us</a>
+          <a class="nav-link" href="#">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-  <div class="container">
-    <div class="devider"></div>
-    <h6 id="heading">ZenCircle Test Environment</h6>
+  <!-- banner -->
+  <div class="container banner-wrapper">
+    <div id="text-bound">
+      <h3>Your Private Oasis for AI-Enhanced Therapy</h3>
 
-    <audio id="audio-player" controls></audio>
+      <p>Online sanctuary where individuals can engage in personalized, AI-guided therapeutic journeys.
+        ZenCircle empowers users to embark on a path towards positive growth and healing.</p>
 
-    <!-- input text -->
-    <div class="container input-wrapper">
-      <div class="row">
-        <div class="col-10" style="padding-right: 0px !important;">
-          <div class="form">
-            <input type="text" class="form-control" id="user-input-text" />
-            <!-- <label for="user-input-text">Ask anything from me</label> -->
-            <small id="validation-text">Please enter a message here</small>
+      <button class="btn btn-primary">Explore features</button>
+    </div>
+  </div>
+
+  <!-- how does it work -->
+  <div class="container-fluid content-wrapper">
+    <div class="mx-auto" id="usage-wrapper">
+      <div class="container">
+        <div class="row">
+          <h5>How does it work ?</h5>
+
+          <div class="card col-md-4" style="text-align: center;">
+            <img class="mx-auto d-block" src="/usage-img-1.png" alt="">
+            <h6>Step 01</h6>
+            <div class="mx-auto" id="devider"></div>
+            <h6 id="sub-heading">Opening up to an AI coach</h6>
+            <p>
+              Conversational AI creates an anonymous, safe space to work
+            </p>
+          </div>
+
+          <div class="card col-md-4" style="text-align: center;">
+            <img class="mx-auto d-block" src="/usage-img-1.png" alt="">
+            <h6>Step 02</h6>
+            <div class="mx-auto" id="devider"></div>
+            <h6 id="sub-heading">Opening up to an AI coach</h6>
+            <p>
+              Conversational AI creates an anonymous, safe space to work
+            </p>
+          </div>
+
+          <div class="card col-md-4" style="text-align: center;">
+            <img class="mx-auto d-block" src="/usage-img-1.png" alt="">
+            <h6>Step 03</h6>
+            <div class="mx-auto" id="devider"></div>
+            <h6 id="sub-heading">Opening up to an AI coach</h6>
+            <p>
+              Conversational AI creates an anonymous, safe space to work
+            </p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="col-2" style="padding-right: 0px !important;">
-          <button type="button" id="send-button" class="btn btn-primary w-100">Ask</button>
+  <!-- connectivity -->
+  <div class="container-fluid connectivity-wrapper">
+    <h5 class="title">features</h5>
+
+    <div class="container" id="eeg-headset-overview">
+      <div class="row">
+        <div class="column col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <h5>EEG Connectivity</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita distinctio non, quisquam molestiae
+            nostrum
+            ratione delectus perferendis voluptatem officia, incidunt ipsam aliquam ipsum magnam quis quidem ut in
+            consectetur. Voluptate.</p>
+          <button class="btn btn-primary">More details</button>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <img class="mx-auto d-block" src="/connectivity-EEG-img-1.png" alt="">
         </div>
       </div>
     </div>
 
-    <!-- controls -->
-    <div id="controls-wrapper">
-      <p id="clear-response">clear response</p>
-      <p id="delete-chat-memory">delete chat history</p>
+    <img class="glow-effect-1" src="/glow-effect.png" alt="">
+
+    <div class="container" id="face-emotions-overview">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <img class="mx-auto d-block" src="/connectivity-facial-emotions-img-2.png" alt="">
+        </div>
+        <div class="column col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <h5>Facial Emotions</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita distinctio non, quisquam molestiae
+            nostrum
+            ratione delectus perferendis voluptatem officia, incidunt ipsam aliquam ipsum magnam quis quidem ut in
+            consectetur. Voluptate.</p>
+          <button class="btn btn-primary">More details</button>
+        </div>
+      </div>
     </div>
 
-    <!-- mistral response -->
-    <textarea readonly class="form-control" id="system-response"></textarea>
+    <img class="glow-effect-2" src="/glow-effect.png" alt="">
+
+    <div class="container" id="voice-customization-overview">
+      <div class="row">
+        <div class="column col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <h5>Customize Your Assistant</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita distinctio non, quisquam molestiae
+            nostrum
+            ratione delectus perferendis voluptatem officia, incidunt ipsam aliquam ipsum magnam quis quidem ut in
+            consectetur. Voluptate.</p>
+          <button class="btn btn-primary">More details</button>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <img class="mx-auto d-block resize-img" src="/connectivity-customizable-assistant-img-3.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <img class="glow-effect-3" src="/glow-effect.png" alt="">
+
+    <div class="container" id="spatial-audio-overview">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <img class="mx-auto d-block resize-img" src="/connectivity-spatial-audio-img-4.png" alt="">
+        </div>
+        <div class="column col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <h5>Enhanced Spatial Audio</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita distinctio non, quisquam molestiae
+            nostrum
+            ratione delectus perferendis voluptatem officia, incidunt ipsam aliquam ipsum magnam quis quidem ut in
+            consectetur. Voluptate.</p>
+          <button class="btn btn-primary">More details</button>
+        </div>
+      </div>
+    </div>
+
+    <img class="glow-effect-4" src="/glow-effect.png" alt="">
+
+    <div class="container" id="vr-headset-overview">
+      <div class="row">
+        <div class="column col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <h5>Metahuman and VR Compatibility</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita distinctio non, quisquam molestiae
+            nostrum
+            ratione delectus perferendis voluptatem officia, incidunt ipsam aliquam ipsum magnam quis quidem ut in
+            consectetur. Voluptate.</p>
+          <button class="btn btn-primary">More details</button>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-auto">
+          <img class="mx-auto d-block" src="/connectivity-VR-img-4.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <img class="glow-effect-5" src="/glow-effect.png" alt="">
   </div>
+
+  <!-- faq -->
+  <div class="container-fluid faq-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <!-- title -->
+          <h5 class="title">faq</h5>
+          <!-- accordian -->
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Target audience of the ZenCircle
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repudiandae nihil eaque. Laboriosam
+                  inventore blanditiis quaerat, est sapiente quod earum accusamus explicabo quasi cum at, quis rerum sed
+                  exercitationem nemo!
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  How does Zencircle compare to face to face treatment?
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repudiandae nihil eaque. Laboriosam
+                  inventore blanditiis quaerat, est sapiente quod earum accusamus explicabo quasi cum at, quis rerum sed
+                  exercitationem nemo!
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Where does Zencircle Operate?
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repudiandae nihil eaque. Laboriosam
+                  inventore blanditiis quaerat, est sapiente quod earum accusamus explicabo quasi cum at, quis rerum sed
+                  exercitationem nemo!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./assets/js/scroll.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-
-  <!-- importing cables files -->
-  <script type="text/javascript" src="./assets/js/libs.core.min.js"></script>
-  <script type="text/javascript" src="./assets/js/cables.min.js"></script>
-  <script type="text/javascript" src="./assets/js/ops.js"></script>
-
-  <script type="text/javascript" src="./assets/js/cgl_shadermodifier.js"></script>
-  <script type="text/javascript" src="./assets/js/cgl_copytexture.js"></script>
-  <script type="text/javascript" src="./assets/js/cgl_pixelreader.js"></script>
-  <script type="text/javascript" src="./assets/js/cgl_light.js"></script>
-  <script type="text/javascript" src="./assets/js/cgl_cubemapframebuffer.js"></script>
-
-  <script type="text/javascript">
-
-    function showError(errId, errMsg) {
-      // handle critical errors here if needed
-    }
-
-    function patchInitialized(patch) {
-      // You can now access the patch object (patch), register variable watchers and so on
-    }
-
-    function patchFinishedLoading(patch) {
-      // The patch is ready now, all assets have been loaded
-    }
-
-    document.addEventListener("CABLES.jsLoaded", function (event) {
-      CABLES.patch = new CABLES.Patch({
-        patchFile: './assets/js/dry_chance.json',
-        "prefixAssetPath": "",
-        "assetPath": "assets/",
-        "jsPath": "./assets/js/",
-        "glCanvasId": "glcanvas",
-        "glCanvasResizeToWindow": true,
-        "onError": showError,
-        "onPatchLoaded": patchInitialized,
-        "onFinishedLoading": patchFinishedLoading,
-        "canvas": { "alpha": true, "premultipliedAlpha": true } // make canvas transparent
-      });
-    });
-
-    // disable rubberband effect on mobile devices
-    // document.getElementById('glcanvas').addEventListener('touchmove', (e) => { e.preventDefault(); }, false);
-  </script>
-  
-  <script type="module" src="./assets/js/main.js"></script>
 </body>
 
 </html>
