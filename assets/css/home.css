@@ -141,6 +141,13 @@ body {
     position: relative;
 }
 
+.connectivity-wrapper .title {
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 40px;
+}
+
 .connectivity-wrapper .container {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -155,6 +162,7 @@ body {
     width: 70%;
     border-radius: 15px;
 }
+
 .connectivity-wrapper .resize-img {
     width: 60%;
 }
@@ -184,7 +192,7 @@ body {
     font-size: 14px;
 }
 
-.glow-effect-1{
+.glow-effect-1 {
     position: absolute;
     transform: translateY(-50%);
     top: 10%;
@@ -194,7 +202,7 @@ body {
     opacity: .6;
 }
 
-.glow-effect-2{
+.glow-effect-2 {
     position: absolute;
     transform: translateY(-50%);
     top: 30%;
@@ -204,7 +212,7 @@ body {
     opacity: .6;
 }
 
-.glow-effect-3{
+.glow-effect-3 {
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
@@ -214,7 +222,7 @@ body {
     opacity: .6;
 }
 
-.glow-effect-4{
+.glow-effect-4 {
     position: absolute;
     transform: translateY(-50%);
     top: 70%;
@@ -224,7 +232,7 @@ body {
     opacity: .6;
 }
 
-.glow-effect-5{
+.glow-effect-5 {
     position: absolute;
     transform: translateY(-50%);
     top: 90%;
@@ -232,4 +240,39 @@ body {
     width: 60% !important;
     z-index: -1;
     opacity: .6;
+}
+
+/* faq wrapper */
+.faq-wrapper {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    background: none;
+}
+
+.faq-wrapper .title {
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.faq-wrapper .accordion-item {
+    border-bottom: .5px solid rgb(80, 80, 80);
+}
+
+.faq-wrapper .accordion-item button {
+    color: white !important;
+    background: #150823 !important;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.faq-wrapper .accordion-item button:focus {
+    box-shadow: none;
+}
+
+.faq-wrapper .accordion-body {
+    color: white;
+    font-size: 15px;
+    background: #1d0b30 !important;
 }
