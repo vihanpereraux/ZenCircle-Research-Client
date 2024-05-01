@@ -21,9 +21,9 @@ document.getElementById('send-button').addEventListener('click', async () => {
 
         let URL = '';
 
-        if (localStorage.length > 0) {
+        if (localStorage.key.length > 0) {
             let keys = [];
-            for (let i = 0; i < localStorage.length; i++) {
+            for (let i = 0; i < localStorage.key.length; i++) {
                 keys.push(localStorage.key(i));
             }
             keys = keys.join();
@@ -32,7 +32,7 @@ document.getElementById('send-button').addEventListener('click', async () => {
             console.log(URL);
         }
         else {
-            URL = 'http://localhost:5000/get-ai-assistant-response?content=' + userInput.value;
+            URL = 'http://localhost:5000/get-ai-assistant-response?content=' + userInput.value + ' I just wana tell you that my current mood is ' + localStorage.getItem('initial_feelings_configs') + 'and here are some of the concerns that I already have -' + localStorage.getItem('initial_sources_configs');
             console.log(URL);
         }
 

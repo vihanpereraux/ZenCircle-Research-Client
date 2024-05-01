@@ -31,7 +31,7 @@
           <a class="nav-link" href="#">ZenCircle</a>
           <a class="nav-link" href="#">Case Studies</a>
           <a class="nav-link" href="#">Contact us</a>
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" href="#">Login</a>
         </div>
       </div>
     </div>
@@ -225,7 +225,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -247,7 +247,88 @@
     </div>
   </div>
 
+  <!-- modals -->
+  <div id="modal_wrapper">
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <img id="stripes" src="./public/stripes.png" alt="">
+          <div class="modal-header">
+            <h1 class="modal-title fs-4" id="exampleModalToggleLabel">Questionnaire</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            Your answers will help us grasp your situation and provide the optimal solution.
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn modal-btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Next Step</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <img id="stripes" src="./public/stripes.png" alt="">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Questionnaire</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            How are you feeling right now?
+
+            <div id="button-wrapper">
+              <button id="great_btn" class="btn btn-primary">Great</button>
+              <button id="okay_btn" class="btn btn-primary">Okay</button>
+              <button id="not_good_btn" class="btn btn-primary">Not so good</button>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-primary modal-btn" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Next Step</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <img id="stripes" src="/stripes.png" alt="">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-4" id="exampleModalToggleLabel2">Questionnaire</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            What are the main sources of concerns in your life right now?
+
+            <div id="button-wrapper">
+              <button id="work_btn" class="btn btn-primary">Work</button>
+              <button id="relationship_btn" class="btn btn-primary">Relationship</button>
+              <button id="finance_btn" class="btn btn-primary">Finance</button>
+              <button id="health_btn" class="btn btn-primary">Health</button>
+              <button id="others_btn" class="btn btn-primary">Other</button>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button id="complete-btn" class="btn btn-primary modal-btn" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Complete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script type="module" src="./assets/js/scroll.js"></script>
+  <script type="module" src="./assets/js/initial.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
