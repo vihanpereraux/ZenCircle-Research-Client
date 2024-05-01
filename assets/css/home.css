@@ -276,3 +276,83 @@ body {
     font-size: 15px;
     background: #1d0b30 !important;
 }
+
+/* modals */
+#modal_wrapper .modal-header {
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: none;
+    background: #230c3c;
+    border-bottom: none !important;
+}
+
+#modal-content {
+    position: relative;
+}
+
+#stripes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#modal_wrapper .modal-body {
+    padding-left: 40px;
+    padding-right: 40px;
+    background: rgb(21, 8, 35);
+    background: linear-gradient(180deg, #230c3c 0%, rgb(66, 37, 132) 58%, #3f47b4 100%);
+    height: 55vh !important;
+    border-bottom: .5px solid #4a53cf;
+    font-size: 18px;
+}
+
+#modal_wrapper .modal-footer {
+    border-top: none;
+    background: #5928df;
+}
+
+#modal_wrapper .modal-btn {
+    position: relative;
+    background: none;
+    border: 1px solid white;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    z-index: 3;
+}
+
+#exampleModalToggle2 .modal-body {
+    font-size: 20px;
+}
+
+#button-wrapper {
+    margin-top: 30px;
+}
+
+#button-wrapper .btn {
+    font-size: 14px;
+    background: white !important;
+    color: black;
+    box-shadow: none;
+    border: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+#button-wrapper .btn:nth-child(2) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#button-wrapper .btn:nth-child(4) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
