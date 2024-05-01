@@ -18,7 +18,10 @@ body {
 }
 
 .navbar {
-    background: #080808 !important;
+    position: relative;
+    background: none !important;
+    backdrop-filter: blur(20px);
+    z-index: 3;
 }
 
 .navbar a {
@@ -35,10 +38,29 @@ body {
 }
 
 /* banner styles */
-.banner-wrapper {
-    height: 100vh;
+.banner_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh !important;
     width: 100vw;
-    background: #080808;
+    z-index: 1;
+}
+
+#banner-filter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh !important;
+    width: 100vw;
+    background: rgba(21, 8, 35, 0.45);
+    z-index: 2;
+}
+
+.banner-wrapper {
+    height: 95vh;
+    width: 100vw;
+    background: none;
 }
 
 .banner-wrapper #text-bound {
@@ -51,6 +73,7 @@ body {
     text-align: center;
     color: white;
     width: 55%;
+    z-index: 3;
 }
 
 .banner-wrapper #text-bound p {

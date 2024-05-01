@@ -17,6 +17,10 @@
 </head>
 
 <body>
+  <!-- gl canavs -->
+  <div id="banner-filter"></div>
+  <canvas class="banner_canvas" id="glcanvas" width="100vw" height="100vh" tabindex="1"></canvas>
+
   <!-- navbar -->
   <nav wrapper class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
@@ -326,6 +330,45 @@
       </div>
     </div>
   </div>
+
+
+  <script type="text/javascript" src="./assets/js/patch.js" async></script>
+  <script type="text/javascript">
+
+    function showError(errId, errMsg)
+    {
+        // handle critical errors here if needed
+    }
+
+    function patchInitialized(patch)
+    {
+        // You can now access the patch object (patch), register variable watchers and so on
+    }
+
+    function patchFinishedLoading(patch)
+    {
+        // The patch is ready now, all assets have been loaded
+    }
+
+    document.addEventListener("CABLES.jsLoaded", function (event)
+    {
+        CABLES.patch = new CABLES.Patch({
+            patch: CABLES.exportedPatch,
+            "prefixAssetPath": "",
+            "assetPath": "assets/",
+            "jsPath": "./assets/js/",
+            "glCanvasId": "glcanvas",
+            "glCanvasResizeToWindow": true,
+            "onError": showError,
+            "onPatchLoaded": patchInitialized,
+            "onFinishedLoading": patchFinishedLoading,
+            "canvas": {"alpha":true, "premultipliedAlpha":true } // make canvas transparent
+        });
+    });
+
+    // disable rubberband effect on mobile devices
+    document.getElementById('glcanvas').addEventListener('touchmove', (e)=>{ e.preventDefault(); }, false);
+</script>
 
   <script type="module" src="./assets/js/scroll.js"></script>
   <script type="module" src="./assets/js/initial.js"></script>
