@@ -17,7 +17,7 @@ body {
   font-family: 'Inter';
 }
 
-canvas {
+#glcanvas {
   position: absolute;
   top: 0;
   width: 100vw;
@@ -132,4 +132,16 @@ canvas {
   font-size: 14px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+/* shat screen */
+#response-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 102%;
+  height: 70px;
+  border-radius: 12px;
+  background: #101010;
+  margin-bottom: 20px;
 }

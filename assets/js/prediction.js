@@ -45,6 +45,7 @@ async function predict() {
         'Negative_Low_Arousel': prediction[2].probability,
         'Negative_High_Arousel': prediction[3].probability,
     });
+    // DOUBLE CHECK LABELS !!!!!
     // console.log(prediction[0].className + " - " + prediction[0].probability)
     // console.log(prediction[1].className + " - " + prediction[1].probability)
     // console.log(prediction[2].className + " - " + prediction[2].probability)
@@ -58,10 +59,24 @@ async function predict() {
 }
 
 
-
 let facial_emotions = []
-function sendData() {
-    setInterval(() => {
+async function sendData() {
+    setInterval(async () => {
+        // 001 - gathering realtime eeg prediction data
+        try {
+            const URL = 'http://localhost:5001/process_eeg_data';
+            const response = await fetch(URL, {
+                method: 'GET'
+            });
+            const data = await response.json();
+            if (data.message == "Service file executed") {
+                console.log("task completed - gathering realtime eeg prediction data")
+            }
+        } catch (error) {
+            console.log(error)
+        }
+
+        // 002 - gathering facial emotions prediction data
         let key_arr = []
         for (let index = 0; index < facial_emotions.length; index++) {
             let highestKey = '';
@@ -80,6 +95,23 @@ function sendData() {
         let mostCommonValue = findMostCommonValue(key_arr);
         console.log("Most Common Value - " + mostCommonValue);
         console.log("data sent")
+
+        // making the POST request to the controller
+        try {
+            const URL = 'http://localhost:5000/process_prediction_data?emotions_prediction=' + mostCommonValue;
+            const response = await fetch(URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const data = await response.json();
+            if (data.message == "user is updated") {
+                console.log("task completed - gathering facial emotion prediction data")
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }, 60000);
 }
 
