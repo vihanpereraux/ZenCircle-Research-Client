@@ -17,6 +17,26 @@ body {
   font-family: 'Inter';
 }
 
+#camera-feed-wrapper {
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 10001;
+  top: 0;
+  left: 50%;
+  text-align: center;
+}
+
+#camera-feed-wrapper #webcam-container canvas {
+  margin-top: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+#camera-feed-wrapper #label-container {
+  margin-top: 10px;
+  font-size: 10px;
+}
+
 #glcanvas {
   position: absolute;
   top: 0;
@@ -41,8 +61,8 @@ body {
 
 #user-input-text {
   border-radius: 10px !important;
-  border: 1px solid #101010;
-  background: #101010;
+  border: 1px solid #222;
+  background: #222;
   color: #c0c0c0;
   height: 50px;
   font-size: 15px;
@@ -100,7 +120,7 @@ body {
 .btn {
   color: #c0c0c0;
   border: none !important;
-  background: #101010 !important;
+  background: #222 !important;
   height: 100%;
   border-radius: 10px !important;
   font-size: 15px;
@@ -114,7 +134,7 @@ body {
 
 .btn:hover {
   transition: all .2s ease-in;
-  background: #1d1d1d !important;
+  background: rgb(65, 65, 65)mportant;
 }
 
 #controls-wrapper {
@@ -142,6 +162,6 @@ body {
   width: 102%;
   height: 70px;
   border-radius: 12px;
-  background: #101010;
+  background: #222;
   margin-bottom: 20px;
 }

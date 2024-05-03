@@ -12,11 +12,11 @@
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/chat.css">
 </head>
 
 <body>
-  <div style="position: absolute; z-index: 10001; top: 0; right: 0;" id="wrapper">
+  <div id="camera-feed-wrapper">
     <button id="prediction_button" type="button">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -109,7 +109,7 @@
     // document.getElementById('glcanvas').addEventListener('touchmove', (e) => { e.preventDefault(); }, false);
   </script>
 
-  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/chat.js"></script>
   <script type="module" src="../assets/js/prediction.js"></script>
 </body>
 

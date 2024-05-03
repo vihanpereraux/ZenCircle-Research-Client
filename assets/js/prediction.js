@@ -4,6 +4,8 @@ let model, webcam, labelContainer, maxPredictions;
 
 // Load the image model and setup the webcam from the click event
 predictionButton.addEventListener('click', async () => {
+    predictionButton.style.display = 'none';
+    
     isPredictionbuttonClicked = true;
     sendData();
     predictionButton.disabled = true;
