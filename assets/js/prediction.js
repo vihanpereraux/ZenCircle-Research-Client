@@ -6,30 +6,34 @@ let model, webcam, labelContainer, maxPredictions;
 predictionButton.addEventListener('click', async () => {
     predictionButton.style.display = 'none';
     
-    isPredictionbuttonClicked = true;
-    sendData();
-    predictionButton.disabled = true;
+    const timeout = setTimeout(async () => {
+        isPredictionbuttonClicked = true;
+        sendData();
+        predictionButton.disabled = true;
 
-    const modelURL = "https://teachablemachine.withgoogle.com/models/4cQ4zXIVn/model.json";
-    const metadataURL = "https://teachablemachine.withgoogle.com/models/4cQ4zXIVn/metadata.json";
+        const modelURL = "https://teachablemachine.withgoogle.com/models/4cQ4zXIVn/model.json";
+        const metadataURL = "https://teachablemachine.withgoogle.com/models/4cQ4zXIVn/metadata.json";
 
-    model = await tmImage.load(modelURL, metadataURL);
-    maxPredictions = model.getTotalClasses();
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
 
-    // Convenience function to setup a webcam
-    const flip = true; // whether to flip the webcam
-    webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-    await webcam.setup(); // request access to the webcam
-    await webcam.play();
-    window.requestAnimationFrame(loop);
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
 
-    // append elements to the DOM
-    document.getElementById("webcam-container").appendChild(webcam.canvas);
-    labelContainer = document.getElementById("label-container");
-    for (let i = 0; i < maxPredictions; i++) { // and class labels
-        labelContainer.appendChild(document.createElement("div"));
-    }
-})
+        // append elements to the DOM
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }, 1000 * 7);
+
+    clearTimeout(timeout);
+});
 
 async function loop() {
     webcam.update(); // update the webcam frame
@@ -114,7 +118,7 @@ async function sendData() {
         } catch (error) {
             console.log(error);
         }
-    }, 60000);
+    }, 1000 * 60 * 2);
 }
 
 
