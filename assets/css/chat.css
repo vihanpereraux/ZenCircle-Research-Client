@@ -37,6 +37,16 @@ body {
   font-size: 10px;
 }
 
+#camera-feed-wrapper #prediction_button {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  left: -50%;
+  z-index: 1000;
+  height: 50px;
+  width: 100px;
+}
+
 #glcanvas {
   position: absolute;
   top: 0;

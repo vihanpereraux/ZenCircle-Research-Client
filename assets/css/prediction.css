@@ -1,27 +1,20 @@
 html {
-    margin: 0;
-    height: 100vh;
-  }
-  
-  body {
-    overflow-x: hidden;
-    background: #080808; font-family: 'Inter';
-  }
-
-canvas{
-    width: calc(540px); 
-    height: calc(360px);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    display: none;
+  margin: 0;
+  height: 100vh;
 }
 
-#prediction_button{
-    position: absolute;
-    bottom: 0;
-    transform: translateX(-50%);
-    left: -50%;
-    z-index: 1000;
+body {
+  overflow-x: hidden;
+  background: #080808;
+  font-family: 'Inter';
+}
+
+canvas {
+  width: calc(540px);
+  height: calc(360px);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  display: none;
 }
