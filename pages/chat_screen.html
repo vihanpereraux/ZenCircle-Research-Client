@@ -66,15 +66,15 @@
     crossorigin="anonymous"></script>
 
   <!-- importing cables files -->
-  <script type="text/javascript" src="../assets/js/libs.core.min.js"></script>
-  <script type="text/javascript" src="../assets/js/cables.min.js"></script>
-  <script type="text/javascript" src="../assets/js/ops.js"></script>
+  <script type="text/javascript" src="../assets/js/webgl/libs.core.min.js"></script>
+  <script type="text/javascript" src="../assets/js/webgl/cables.min.js"></script>
+  <script type="text/javascript" src="../assets/js/webgl/ops.js"></script>
 
-  <script type="text/javascript" src="../assets/js/cgl_shadermodifier.js"></script>
-  <script type="text/javascript" src="../assets/js/cgl_copytexture.js"></script>
-  <script type="text/javascript" src="../assets/js/cgl_pixelreader.js"></script>
-  <script type="text/javascript" src="../assets/js/cgl_light.js"></script>
-  <script type="text/javascript" src="../assets/js/cgl_cubemapframebuffer.js"></script>
+  <script type="text/javascript" src="../assets/js/webgl/cgl_shadermodifier.js"></script>
+  <script type="text/javascript" src="../assets/js/webgl/cgl_copytexture.js"></script>
+  <script type="text/javascript" src="../assets/js/webgl/cgl_pixelreader.js"></script>
+  <script type="text/javascript" src="../assets/js/webgl/cgl_light.js"></script>
+  <script type="text/javascript" src="../assets/js/webgl/cgl_cubemapframebuffer.js"></script>
 
   <script type="text/javascript">
 
@@ -92,7 +92,7 @@
 
     document.addEventListener("CABLES.jsLoaded", function (event) {
       CABLES.patch = new CABLES.Patch({
-        patchFile: '../assets/js/dry_chance.json',
+        patchFile: '../assets/js/webgl/dry_chance.json',
         "prefixAssetPath": "",
         "assetPath": "assets/",
         "jsPath": "../assets/js/",
@@ -109,8 +109,8 @@
     // document.getElementById('glcanvas').addEventListener('touchmove', (e) => { e.preventDefault(); }, false);
   </script>
 
-  <script type="module" src="../assets/js/chat.js"></script>
-  <script type="module" src="../assets/js/prediction.js"></script>
+  <script type="module" src="../assets/js/client/chat.js"></script>
+  <script type="module" src="../assets/js/client/prediction.js"></script>
 </body>
 
 </html>
