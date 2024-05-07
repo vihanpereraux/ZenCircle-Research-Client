@@ -7,7 +7,7 @@ let facial_emotions = [];
 predictionButton.addEventListener('click', async () => {
     predictionButton.style.display = 'none';
     
-    const timeout = setTimeout(async () => {
+    setTimeout(async () => {
         const modelURL = "https://teachablemachine.withgoogle.com/models/4cQ4zXIVn/model.json";
         const metadataURL = "https://teachablemachine.withgoogle.com/models/4cQ4zXIVn/metadata.json";
 
@@ -90,7 +90,7 @@ async function sendData() {
             for (let key in facial_emotions[index]) {
                 if (facial_emotions[index][key] > highestValue) {
                     highestValue = facial_emotions[index][key];
-                    console.log(highestKey)
+                    //console.log(highestKey)
                     highestKey = key;
                 }
             }
@@ -117,7 +117,7 @@ async function sendData() {
         } catch (error) {
             console.log(error);
         }
-    }, 1000 * 60 * 1);
+    }, 1000 * 60 * 5);
 }
 
 
