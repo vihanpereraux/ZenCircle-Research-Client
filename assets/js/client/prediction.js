@@ -1,16 +1,13 @@
 const predictionButton = document.getElementById('prediction_button');
 let isPredictionbuttonClicked = false;
 let model, webcam, labelContainer, maxPredictions;
+let facial_emotions = [];
 
 // Load the image model and setup the webcam from the click event
 predictionButton.addEventListener('click', async () => {
     predictionButton.style.display = 'none';
     
-    const timeout = setTimeout(async () => {
-        isPredictionbuttonClicked = true;
-        sendData();
-        predictionButton.disabled = true;
-
+    setTimeout(async () => {
         const modelURL = "https://teachablemachine.withgoogle.com/models/4cQ4zXIVn/model.json";
         const metadataURL = "https://teachablemachine.withgoogle.com/models/4cQ4zXIVn/metadata.json";
 
@@ -30,9 +27,13 @@ predictionButton.addEventListener('click', async () => {
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
-    }, 1000 * 7);
 
-    clearTimeout(timeout);
+        sendData();
+        isPredictionbuttonClicked = true;
+        predictionButton.disabled = true;
+    }, 1000 * 5);
+
+    // clearTimeout(timeout);
 });
 
 async function loop() {
@@ -65,7 +66,6 @@ async function predict() {
 }
 
 
-let facial_emotions = []
 async function sendData() {
     setInterval(async () => {
         // 001 - gathering realtime eeg prediction data
@@ -87,17 +87,16 @@ async function sendData() {
         for (let index = 0; index < facial_emotions.length; index++) {
             let highestKey = '';
             let highestValue = -Infinity;
-
             for (let key in facial_emotions[index]) {
                 if (facial_emotions[index][key] > highestValue) {
                     highestValue = facial_emotions[index][key];
+                    //console.log(highestKey)
                     highestKey = key;
                 }
             }
             key_arr.push(highestKey);
         }
 
-        // console.log(key_arr)
         let mostCommonValue = findMostCommonValue(key_arr);
         console.log("Most Common Value - " + mostCommonValue);
         console.log("data sent")
@@ -118,7 +117,7 @@ async function sendData() {
         } catch (error) {
             console.log(error);
         }
-    }, 1000 * 60 * 2);
+    }, 1000 * 60 * 5);
 }
 
 
@@ -139,6 +138,5 @@ function findMostCommonValue(strings) {
             mostCommon = string;
         }
     }
-
     return mostCommon;
 }

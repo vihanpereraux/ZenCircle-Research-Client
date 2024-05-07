@@ -93,12 +93,19 @@ deleteCatMemory.addEventListener('click', async () => {
 });
 
 
+predictionButton.addEventListener('click', () => {
+    const dateTime = new Date();
+    console.log(dateTime.getHours() + " : " + dateTime.getMinutes() + " : " + dateTime.getSeconds() + " - " + 'prediction button clicked')
+    startPrediction();
+});
+
+
 // function that executes every 7 mins
 function startPrediction() {
-    const timeout = setTimeout(() => {
-        console.log("prediction loop started !");
+    setTimeout(() => {
+        console.log("----------- prediction loop started ! ---------");
         // executes every 7 mins
-        const detectionInterval = setInterval(async () => {
+        setInterval(async () => {
             try {
                 const URL = 'http://localhost:5000/get_predictions';
                 const response = await fetch(URL, {
@@ -168,7 +175,8 @@ function startPrediction() {
                 // setting buttons as suggetions
                 const responsePanel = document.getElementById('response-panel'); // Get the div container
                 // making the panel visible again
-                responsePanel.style.display = 'block';
+                console.log("----------- Displaying the suggestions -----------");
+                responsePanel.style.display = 'flex';
 
                 Array.from(new Set(combined_labels)).forEach((item, index) => {
                     const button = document.createElement('button'); // Create a new button element
@@ -184,17 +192,11 @@ function startPrediction() {
             } catch (error) {
                 console.error(error)
             }
-        }, 1000 * 60 * 3);
-        clearInterval(detectionInterval);
+        }, 1000 * 60 * 7);
+        //clearInterval(detectionInterval);
     }, 1000 * 7);
-
-    clearTimeout(timeout);
 }
-predictionButton.addEventListener('click', () => {
-    const dateTime = new Date();
-    console.log(dateTime.getHours() + " : " + dateTime.getMinutes() + " : " + dateTime.getSeconds() + " - " + 'prediction button clicked')
-    startPrediction();
-});
+
 
 
 
